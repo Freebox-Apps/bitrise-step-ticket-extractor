@@ -1,9 +1,9 @@
 title: |-
   bitrise-ticket-extractor
 summary: |
-  Extract tickets references
+  Extract tickets references from commit message starting with `#`
 description: |
-   This step allow to extract all ticket references contained in a range of commits
+   This step allow to extract all tickets references contained in a range of commits
 website: https://github.com/Freebox-Apps/bitrise-step-bitrise-ticket-extractor
 source_code_url: https://github.com/Freebox-Apps/bitrise-step-bitrise-ticket-extractor
 support_url: https://github.com/Freebox-Apps/bitrise-step-bitrise-ticket-extractor/issues
@@ -14,7 +14,6 @@ type_tags:
 toolkit:
   go:
     package_name: github.com/Freebox-Apps/bitrise-step-bitrise-ticket-extractor
-
 
 inputs:
   - repo_dir: "."
@@ -31,7 +30,7 @@ inputs:
       is_required: false
   - output_delimiter: "|"
     opts:
-      title: Ticket output_delimiter
+      title: Ticket delimiter
       description:  Delimiter to use when several tickets are found e.g. with `|` will ouptut TK-123|TK-124
 
 outputs:
