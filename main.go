@@ -25,6 +25,8 @@ func main() {
 
 	ticketListStrigns := strings.Join(allTickets[:], getOutputDelimiter())
 
+	fmt.Printf("ticket id list: %s\n", ticketListStrigns)
+
 	cmdLog, err := exec.Command("bitrise", "envman", "add", "--key", "TICKET_LIST", "--value", ticketListStrigns).CombinedOutput()
 	if err != nil {
 		fmt.Printf("Failed to expose output with envman, error: %#v | output: %s", err, cmdLog)
