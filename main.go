@@ -20,6 +20,7 @@ func main() {
 
 	allTickets := []string{}
 	for i := 0; i < len(commitStrList); i++ {
+		fmt.Printf("-- %s\n", commitStrList[i])
 		allTickets = append(allTickets, extractSovledTickets(commitStrList[i])...)
 	}
 
