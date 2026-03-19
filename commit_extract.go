@@ -54,6 +54,12 @@ func fetchTags(gitCmd git.Git, dir string) {
 func getLogs(gitCmd git.Git, commitStart string, commitEnd string) string {
 	// get logs
 	logCmd := gitCmd.Log("%s%n%b"+CommitSeparator, commitStart, commitEnd, "--no-merges", "--children")
+	fmt.Printf(
+	    "git log --format='%s' %s..%s --no-merges --children\n",
+	    "%s%n%b"+CommitSeparator,
+	    commitStart,
+	    commitEnd,
+	)
 	var output, errLog = logCmd.RunAndReturnTrimmedOutput()
 	if errLog != nil {
 		fmt.Printf("Failed get logs for this repository")

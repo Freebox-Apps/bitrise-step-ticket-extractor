@@ -17,8 +17,9 @@ const (
 func main() {
 	commitStrList := getCommitStringList()
 	fmt.Printf("Found %d commit candidates\n", len(commitStrList))
+	fmt.Printf("display list: %#v\n", commitStrList)
 
-	allTickets := []string{}
+	allTickets := []string{}	
 	for i := 0; i < len(commitStrList); i++ {
 		fmt.Printf("-- %s\n", commitStrList[i])
 		allTickets = append(allTickets, extractSovledTickets(commitStrList[i])...)
